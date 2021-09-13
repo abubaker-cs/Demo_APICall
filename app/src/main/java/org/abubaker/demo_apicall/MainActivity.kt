@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
 
             try {
 
-                //
+                // Path
                 val url = URL("http://www.mocky.io/v2/5e3826143100006a00d37ffa")
 
                 // Establish the connection
@@ -163,9 +163,19 @@ class MainActivity : AppCompatActivity() {
                     /**
                      * Creates a buffering character-input stream that uses a default-sized input buffer.
                      */
-                    val reader = BufferedReader(InputStreamReader(inputStream))
+
+                    // BufferedReader
+                    val reader = BufferedReader(
+                        InputStreamReader(inputStream)
+                    )
+
+                    // Our StringBuilder : It will allow us to build strings
                     val sb = StringBuilder()
+
+                    //We will use this variable (line) to go through individual lines
                     var line: String?
+
+
                     try {
                         /**
                          * Reads a line of text.  A line is considered to be terminated by any one
@@ -188,8 +198,12 @@ class MainActivity : AppCompatActivity() {
                             e.printStackTrace()
                         }
                     }
+
+                    // If the connection was successful
                     result = sb.toString()
                 } else {
+
+                    // If the connection was failed
                     /**
                      * Gets the HTTP response message, if any, returned along with the
                      * response code from a server.
@@ -198,11 +212,20 @@ class MainActivity : AppCompatActivity() {
                 }
 
             } catch (e: SocketTimeoutException) {
+
+                // Timeout
                 result = "Connection Timeout"
+
             } catch (e: Exception) {
+
+                // General
                 result = "Error : " + e.message
+
             } finally {
+
+                // Disconnect the Connection
                 connection?.disconnect()
+
             }
 
             // You can notify with your result to onPostExecute.
