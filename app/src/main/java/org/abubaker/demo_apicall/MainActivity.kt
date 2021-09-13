@@ -24,14 +24,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Here we will call the asyncTask class for the api calling and pass the required parameters to it.
-        // CallAPILoginAsyncTask("Panjutorials", "123456").execute()
+        CallAPILoginAsyncTask("Panjutorials", "123456").execute()
     }
 
     /**
      * Inner Class
      * ===========
      * “A nested class marked as inner can access the members of its outer class.
-     * Inner classes carry a reference to an object of an outer class:”
+     * Inner classes carry a reference to an object of an outer class:”JSON
      * source: https://kotlinlang.org/docs/reference/nested-classes.html
      *
      * This is the background class is used to execute background task.
