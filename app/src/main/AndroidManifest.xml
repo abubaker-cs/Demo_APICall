@@ -2,13 +2,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.abubaker.demo_apicall">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!--
+
+    VERY IMPORTANT: android:usesCleartextTraffic="true"
+
+    It allows use to access websites, such as http://www.mocky.io, otherwise we will not be
+    able to access and get the data from the website.
+
+    -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Demo_APICall">
+        android:theme="@style/Theme.Demo_APICall"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true">
