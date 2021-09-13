@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /** 03
-         * Method is used to show the Custom Progress Dialog.
+         * Method is used to show the Custom Progress Dialog (XML)
          */
         private fun showProgressDialog() {
 
