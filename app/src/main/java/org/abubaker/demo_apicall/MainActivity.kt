@@ -72,8 +72,14 @@ class MainActivity : AppCompatActivity() {
              * You can use the above url for Detail understanding of HttpURLConnection class
              */
             var connection: HttpURLConnection? = null
+
+
             try {
+
+                //
                 val url = URL("http://www.mocky.io/v2/5e3826143100006a00d37ffa")
+
+                // Establish the connection
                 connection = url.openConnection() as HttpURLConnection
 
                 /**
@@ -81,8 +87,8 @@ class MainActivity : AppCompatActivity() {
                  * flag to true if you intend to use the URL connection for output,
                  * false if not.  The default is false.
                  */
-                connection.doOutput = true
-                connection.doInput = true
+                connection.doOutput = true // Do we GET data?
+                connection.doInput = true // Do we SEND data?
 
                 /**
                  * Sets whether HTTP redirects should be automatically followed by this instance.
