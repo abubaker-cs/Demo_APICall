@@ -281,6 +281,7 @@ class MainActivity : AppCompatActivity() {
             val dataListArray = jsonObject.optJSONArray("data_list")
             Log.i("Data List Size", "${dataListArray.length()}")
 
+            // Loop through all items in teh dataListArray (data_list)
             for (item in 0 until dataListArray.length()) {
                 Log.i("Value $item", "${dataListArray[item]}")
 
