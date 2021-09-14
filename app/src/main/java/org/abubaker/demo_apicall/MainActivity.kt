@@ -265,6 +265,7 @@ class MainActivity : AppCompatActivity() {
             // Data List Details.
             Log.i("Data List Size", "${responseData.data_list.size}")
 
+            // Looping through indices of the Array
             for (item in responseData.data_list.indices) {
                 Log.i("Value $item", "${responseData.data_list[item]}")
 
