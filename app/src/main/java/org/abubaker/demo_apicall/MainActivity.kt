@@ -250,60 +250,83 @@ class MainActivity : AppCompatActivity() {
              * Use the ResponseData.kt file as a model to prepare results
              */
             val responseData = Gson().fromJson(result, ResponseData::class.java)
+            Log.i("Message", responseData.message)
+
+            Log.i("Message", responseData.message)
+            Log.i("User Id", "${responseData.user_id}")
+            Log.i("Name", responseData.name)
+            Log.i("Email", responseData.email)
+            Log.i("Mobile", "${responseData.mobile}")
+
+            // Profile Details
+            Log.i("Is Profile Completed", "${responseData.profile_details.is_profile_completed}")
+            Log.i("Rating", "${responseData.profile_details.rating}")
+
+            // Data List Details.
+            Log.i("Data List Size", "${responseData.data_list.size}")
+
+            for (item in responseData.data_list.indices) {
+                Log.i("Value $item", "${responseData.data_list[item]}")
+
+                Log.i("ID", "${responseData.data_list[item].id}")
+                Log.i("Value", "${responseData.data_list[item].value}")
+            }
+
+            Toast.makeText(this@MainActivity, responseData.message, Toast.LENGTH_SHORT).show()
 
             /**
              *Creates a new with name/value mappings from the JSON string.
              */
-            val jsonObject = JSONObject(result)
+            // val jsonObject = JSONObject(result)
 
             // Returns the value mapped by {name} if it exists.
-            val message = jsonObject.optString("message")
-            Log.i("Message", message)
+            // val message = jsonObject.optString("message")
+            // Log.i("Message", message)
 
             // Returns the value mapped by {name} if it exists.
-            val userId = jsonObject.optInt("user_id")
-            Log.i("User Id", "$userId")
+            // val userId = jsonObject.optInt("user_id")
+            // Log.i("User Id", "$userId")
 
             // Returns the value mapped by {name} if it exists.
-            val name = jsonObject.optString("name")
-            Log.i("Name", "$name")
+            // val name = jsonObject.optString("name")
+            // Log.i("Name", "$name")
 
             // Returns the value mapped by {name} if it exists.
-            val email = jsonObject.optString("email")
-            Log.i("Email", "$email")
+            // val email = jsonObject.optString("email")
+            // Log.i("Email", "$email")
 
             // Returns the value mapped by {name} if it exists.
-            val mobileNumber = jsonObject.optLong("mobile")
-            Log.i("Mobile", "$mobileNumber")
+            // val mobileNumber = jsonObject.optLong("mobile")
+            // Log.i("Mobile", "$mobileNumber")
 
             // Returns the value mapped by {name} if it exists.
-            val profileDetailsObject = jsonObject.optJSONObject("profile_details")
+            // val profileDetailsObject = jsonObject.optJSONObject("profile_details")
 
-            val isProfileCompleted = profileDetailsObject.optBoolean("is_profile_completed")
-            Log.i("Is Profile Completed", "$isProfileCompleted")
+            // val isProfileCompleted = profileDetailsObject.optBoolean("is_profile_completed")
+            // Log.i("Is Profile Completed", "$isProfileCompleted")
 
-            val rating = profileDetailsObject.optDouble("rating")
-            Log.i("Rating", "$rating")
+            // val rating = profileDetailsObject.optDouble("rating")
+            // Log.i("Rating", "$rating")
 
             // Returns the value mapped by {name} if it exists.
-            val dataListArray = jsonObject.optJSONArray("data_list")
-            Log.i("Data List Size", "${dataListArray.length()}")
+            // val dataListArray = jsonObject.optJSONArray("data_list")
+            // Log.i("Data List Size", "${dataListArray.length()}")
 
             // Loop through all items in teh dataListArray (data_list)
-            for (item in 0 until dataListArray.length()) {
-                Log.i("Value $item", "${dataListArray[item]}")
+            // for (item in 0 until dataListArray.length()) {
+            // Log.i("Value $item", "${dataListArray[item]}")
 
-                // Returns the value mapped by {name} if it exists.
-                val dataItemObject: JSONObject = dataListArray[item] as JSONObject
+            // Returns the value mapped by {name} if it exists.
+            // val dataItemObject: JSONObject = dataListArray[item] as JSONObject
 
-                val id = dataItemObject.optString("id")
-                Log.i("ID", "$id")
+            // val id = dataItemObject.optString("id")
+            // Log.i("ID", "$id")
 
-                val value = dataItemObject.optString("value")
-                Log.i("Value", "$value")
-            }
+            // val value = dataItemObject.optString("value")
+            // Log.i("Value", "$value")
+            // }
 
-            Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
+            // Toast.makeText(this@MainActivity, message, Toast.LENGTH_SHORT).show()
         }
 
         /** 03
