@@ -247,7 +247,8 @@ class MainActivity : AppCompatActivity() {
 
             /**
              * Using GSON Library
-             * Use the ResponseData.kt file as a model to prepare results
+             * Map the json response with the Data Class using GSON.
+             * Uses the ResponseData.kt file as a model to prepare results
              */
             val responseData = Gson().fromJson(result, ResponseData::class.java)
             Log.i("Message", responseData.message)
