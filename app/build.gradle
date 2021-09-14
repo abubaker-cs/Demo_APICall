@@ -38,11 +38,14 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 
-    //Coroutines
+    // Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2-native-mt'
 
-    //For lifecycle dependent coroutines
+    // For lifecycle dependent coroutines
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    // GSON Library
+    implementation 'com.google.code.gson:gson:2.8.8'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

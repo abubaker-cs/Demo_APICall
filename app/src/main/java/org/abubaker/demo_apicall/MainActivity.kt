@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Video #206: Sending Post Requests
         // Here we will call the asyncTask class for the api calling and pass the required parameters to it.
         CallAPILoginAsyncTask("Panjutorials", "123456").execute()
     }
